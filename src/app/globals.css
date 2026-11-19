@@ -1,26 +1,119 @@
 @import "tailwindcss";
 
+/*
+ * KINGBOMB palette — sampled directly from the logo.
+ *   ink        #0a0a08  page background around the badge
+ *   jungle     #0e3325  badge edge green
+ *   emerald    #134e3a  badge centre glow
+ *   lagoon     #084141  water band
+ *   palm       #657f54  palm fronds
+ *   gold       #b09b63  outer ring
+ *   gold-hi    #dabe7f  ring highlight
+ *   cream      #f0e9d8  domain plaque
+ *   bomb       #8f2235  the bomb
+ *   bomb-dark  #601320  bomb shadow
+ */
+@theme {
+  --color-ink: #0a0a08;
+  --color-ink-2: #11120e;
+  --color-jungle: #0e3325;
+  --color-emerald: #134e3a;
+  --color-lagoon: #084141;
+  --color-palm: #657f54;
+  --color-gold: #b09b63;
+  --color-gold-hi: #dabe7f;
+  --color-cream: #f0e9d8;
+  --color-bomb: #8f2235;
+  --color-bomb-dark: #601320;
+
+  --font-display: var(--font-cinzel), "Times New Roman", serif;
+  --font-sans: var(--font-body), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  --tabbar-h: 4.25rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--color-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-ink);
+  background-image:
+    radial-gradient(120% 60% at 50% 0%, rgb(19 78 58 / 0.55), transparent 70%),
+    radial-gradient(90% 40% at 50% 100%, rgb(8 65 65 / 0.35), transparent 70%);
+  background-attachment: scroll;
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+  font-size: 1rem; /* 16px minimum body text */
+  line-height: 1.6;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-gold-hi);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Inputs never below 16px so iOS Safari doesn't zoom on focus */
+input,
+select,
+textarea {
+  font-size: max(16px, 1rem);
+}
+
+/* Shimmering gold lettering used for big headings */
+.text-gold-foil {
+  background: linear-gradient(180deg, #f3e2b0 0%, var(--color-gold-hi) 38%, var(--color-gold) 62%, #8a7646 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Stitched double ring, echoing the logo's dashed inner border */
+.badge-frame {
+  position: relative;
+  border: 2px solid var(--color-gold);
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(120% 90% at 50% 20%, rgb(19 78 58 / 0.9), rgb(14 51 37 / 0.92) 55%, rgb(10 10 8 / 0.95));
+  box-shadow: 0 0 0 1px rgb(10 10 8), 0 18px 50px -20px rgb(0 0 0 / 0.8);
+}
+.badge-frame::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1.5px dashed rgb(176 155 99 / 0.5);
+  border-radius: calc(1.25rem - 6px);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spark {
+    animation: spark 2.4s ease-in-out infinite;
+    transform-origin: center;
+  }
+  @keyframes spark {
+    0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.55; transform: scale(0.82) rotate(18deg); }
+  }
 }
