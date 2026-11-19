@@ -10,7 +10,7 @@ export function ComingSoon({ eyebrow }: { eyebrow: string }) {
             {eyebrow}
           </span>
           <Ornament />
-          <span className="text-gold-foil font-display text-[clamp(2.6rem,13vw,6.5rem)] font-black leading-[0.95] tracking-[0.06em]">
+          <span className="text-gold-foil font-display text-[clamp(2.6rem,13vw,6.5rem)] font-black uppercase leading-[0.95] tracking-[0.06em]">
             Coming
             <br />
             Soon

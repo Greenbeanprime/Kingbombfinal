@@ -67,7 +67,7 @@ export function SignupForm({ compact = false }: { compact?: boolean }) {
           maxLength={254}
           placeholder="you@email.com"
           aria-invalid={invalid || undefined}
-          className="h-14 w-full min-w-0 flex-1 rounded-lg border-2 border-gold/70 bg-ink/70 px-4 text-base text-cream placeholder:text-cream/50 focus:border-gold-hi focus:outline-none"
+          className={`h-14 w-full min-w-0 shrink-0 ${compact ? "" : "sm:flex-1"} rounded-lg border-2 border-gold/70 bg-ink/70 px-4 text-base text-cream placeholder:text-cream/50 focus:border-gold-hi focus:outline-none`}
         />
         {/* Spam trap: humans never see or fill this. */}
         <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
