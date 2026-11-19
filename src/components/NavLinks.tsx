@@ -51,6 +51,13 @@ const ICONS: Record<string, React.ReactNode> = {
       <path d="M12 9.5V7.5M2.5 19.5h19" />
     </>
   ),
+  "/vending": (
+    <>
+      <rect x="5" y="2.5" width="14" height="19" rx="1.5" />
+      <rect x="7.5" y="5" width="6.5" height="10" rx=".5" />
+      <path d="M16.5 6.5v2M16.5 11v1.5M7.5 18.5h6.5" />
+    </>
+  ),
   "/contact": (
     <>
       <rect x="3.5" y="5.5" width="17" height="13" rx="1.5" />
@@ -67,7 +74,7 @@ export function TabBar() {
       aria-label="Main"
       className="fixed inset-x-0 bottom-0 z-50 border-t border-gold/50 bg-ink/95 backdrop-blur md:hidden pb-[env(safe-area-inset-bottom)]"
     >
-      <ul className="mx-auto grid h-[var(--tabbar-h)] max-w-md grid-cols-4">
+      <ul className="mx-auto grid h-[var(--tabbar-h)] max-w-lg grid-cols-5">
         {NAV.map((item) => {
           const active = isActive(item.href);
           return (
@@ -75,7 +82,7 @@ export function TabBar() {
               <Link
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`flex min-h-11 w-full flex-col items-center justify-center gap-1 font-display text-[0.7rem] font-bold uppercase tracking-[0.12em] transition-colors ${
+                className={`flex min-h-11 w-full flex-col items-center justify-center gap-1 font-display text-[0.62rem] font-bold uppercase tracking-[0.04em] transition-colors min-[380px]:text-[0.68rem] min-[380px]:tracking-[0.08em] ${
                   active ? "text-gold-hi" : "text-cream/80 active:text-gold-hi"
                 }`}
               >

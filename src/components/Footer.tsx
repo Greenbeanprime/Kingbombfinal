@@ -24,7 +24,7 @@ export function Footer() {
         <nav aria-label="Footer">
           <ul className="grid grid-cols-2 gap-2 md:grid-cols-1">
             {NAV.map((item) => (
-              <li key={item.href}>
+              <li key={item.href} className="last:col-span-2 md:last:col-span-1">
                 <Link
                   href={item.href}
                   className="flex min-h-12 items-center justify-center rounded-md border border-gold/30 px-4 font-display text-sm font-semibold uppercase tracking-[0.16em] text-cream/90 hover:border-gold-hi hover:text-gold-hi md:justify-start md:border-0 md:px-0"
