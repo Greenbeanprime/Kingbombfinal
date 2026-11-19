@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KINGBOMB
 
-## Getting Started
+Website for **KINGBOMB**, a late-night food spot in Clearwater Beach, Florida: Coastal Party Platters, tacos, and pho. Live at **https://kingbomb.food**.
 
-First, run the development server:
+Built with Next.js (App Router) and Tailwind CSS, deployed on Vercel.
+
+## Run it locally
 
 ```bash
+npm install
+cp .env.example .env.local   # then fill in your keys
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where to edit things
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| What | File |
+|---|---|
+| Menu items (name, description, price, category, image, available) | `src/data/menu.ts` |
+| Turn online ordering on/off | `ORDERING_ENABLED` in `src/data/menu.ts` |
+| Menu photos | `public/menu/` |
+| Contact page | `src/app/contact/page.tsx` |
+| Colors | top of `src/app/globals.css` |
+| Logo | `public/kingbomb-logo.png` |
 
-## Learn More
+## How it works
 
-To learn more about Next.js, take a look at the following resources:
+- **Email list:** `/api/subscribe` adds people to Mailchimp with double opt-in. The API key stays on the server.
+- **Checkout:** `/api/checkout` creates a Stripe Checkout session (Apple Pay, Google Pay and promo codes supported). Prices always come from `src/data/menu.ts`.
+- **Order emails:** `/api/stripe/webhook` verifies Stripe's signature on `checkout.session.completed`, then emails the customer and the owner through Resend.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Secret keys live only in `.env.local` (never committed) and in Vercel's Environment Variables. See `.env.example` for the list.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Launching
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See **[LAUNCH-CHECKLIST.md](LAUNCH-CHECKLIST.md)** for GitHub → Vercel, environment variables, DNS at Spaceship, the Stripe webhook, and Resend domain verification.
