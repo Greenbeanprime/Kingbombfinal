@@ -32,8 +32,9 @@ export default function Home() {
           className="mx-auto h-auto w-[min(88vw,30rem)] drop-shadow-[0_20px_45px_rgb(0_0_0/0.7)]"
         />
 
-        <h1 className="mx-auto mt-8 max-w-3xl text-[clamp(1.6rem,7vw,3.25rem)]">
-          <span className="text-gold-foil">Clearwater Beach, Florida</span>
+        <h1 className="mx-auto mt-8 flex max-w-3xl flex-col items-center text-[clamp(1.3rem,6.6vw,3.25rem)] leading-tight">
+          <span className="text-gold-foil whitespace-nowrap">Clearwater Beach,</span>{" "}
+          <span className="text-gold-foil">Florida</span>
         </h1>
         <Ornament className="mt-5" />
       </section>
