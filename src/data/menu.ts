@@ -19,7 +19,7 @@
  *  To turn on online ordering, ALSO set ORDERING_ENABLED = true.
  */
 
-export const ORDERING_ENABLED = false;
+export const ORDERING_ENABLED = true;
 
 /** Optional flat delivery fee in dollars (0 = free). */
 export const DELIVERY_FEE = 0;
@@ -45,6 +45,16 @@ export type MenuItem = {
 };
 
 export const MENU: MenuItem[] = [
+  // TEST ITEM: test-ordering branch only, never merge into main.
+  {
+    id: "test-king-platter",
+    name: "Test King Platter",
+    description: "Test item for checking Stripe checkout and order emails.",
+    price: 5,
+    category: "Coastal Party Platters",
+    image: "",
+    available: true,
+  },
   // Example — copy, uncomment, and edit:
   // {
   //   id: "king-platter",
