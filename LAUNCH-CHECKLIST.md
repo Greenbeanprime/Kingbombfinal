@@ -57,14 +57,15 @@ Nothing extra to switch on. New signups are added as "pending" and Mailchimp aut
 1. In Vercel: **Project → Settings → Domains → Add** `kingbomb.food`, then add `www.kingbomb.food` too.
    Choose "Redirect www.kingbomb.food to kingbomb.food".
 2. In Spaceship: **Launchpad → Domain Manager → kingbomb.food → Nameservers & DNS → Advanced DNS** (make sure nameservers are "Spaceship nameservers").
-3. Delete any existing **A** record on `@` and any **CNAME** on `www` (often parking-page records). Then add:
+3. Delete the two existing **A** records on `@` (`34.216.117.25` and `54.149.79.189`, Spaceship's parking page) and any **CNAME** on `www`. Then add these (exact values from Vercel for the `kingbombfinal` project):
 
 | Type | Host | Value | TTL |
 |---|---|---|---|
 | A | `@` | `216.198.79.1` | Automatic / 30 min |
-| CNAME | `www` | `cname.vercel-dns.com` | Automatic / 30 min |
+| A | `@` | `64.29.17.1` | Automatic / 30 min |
+| CNAME | `www` | `bb976d73db9c5bc7.vercel-dns-017.com` | Automatic / 30 min |
 
-> Vercel shows the exact values it wants on the Domains screen. If it lists a different A value (older projects use `76.76.21.21`) or a project-specific CNAME such as `xxxx.vercel-dns-017.com`, **use what Vercel shows**. Both styles work.
+> Already done in Vercel: `kingbomb.food` and `www.kingbomb.food` are attached to the **kingbombfinal** project, with www redirecting to kingbomb.food.
 
 4. Wait 5–60 minutes. When Vercel shows **Valid Configuration** for both, HTTPS is issued automatically.
 
