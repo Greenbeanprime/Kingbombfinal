@@ -36,7 +36,7 @@ export function Footer() {
         </nav>
 
         <section aria-labelledby="footer-signup">
-          <h2 id="footer-signup" className="mb-3 text-center text-lg font-bold text-gold-hi md:text-left">
+          <h2 id="footer-signup" className="mb-3 text-center text-lg text-gold-hi md:text-left">
             Get the Late-Night Drop
           </h2>
           <SignupForm compact />

@@ -32,7 +32,7 @@ export default function Home() {
           className="mx-auto h-auto w-[min(88vw,30rem)] drop-shadow-[0_20px_45px_rgb(0_0_0/0.7)]"
         />
 
-        <h1 className="mx-auto mt-8 max-w-3xl text-[clamp(1.75rem,7.2vw,3.5rem)] font-black text-cream">
+        <h1 className="mx-auto mt-8 max-w-3xl text-[clamp(1.75rem,7.2vw,3.5rem)] text-cream">
           Late-Night <span className="text-gold-foil">Seafood, Tacos</span> &amp;{" "}
           <span className="text-gold-foil">Pho</span>
         </h1>
@@ -44,7 +44,7 @@ export default function Home() {
 
       <section aria-labelledby="signup-h" className="px-4">
         <div className="badge-frame mx-auto max-w-2xl px-5 py-10 text-center md:px-12">
-          <h2 id="signup-h" className="text-[clamp(1.4rem,5.5vw,2.1rem)] font-bold text-gold-hi">
+          <h2 id="signup-h" className="text-[clamp(1.4rem,5.5vw,2.1rem)] text-gold-hi">
             Be First in Line
           </h2>
           <p className="mx-auto mb-6 mt-3 max-w-[36ch] text-cream/90">

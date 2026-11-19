@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Source_Sans_3 } from "next/font/google";
+import { Cinzel, Cinzel_Decorative, Source_Sans_3 } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { TabBar } from "@/components/NavLinks";
@@ -12,7 +12,14 @@ import "./globals.css";
 const cinzel = Cinzel({
   variable: "--font-cinzel",
   subsets: ["latin"],
-  weight: ["600", "700", "900"],
+  display: "swap",
+});
+
+// Same decorative Cinzel as the KINGBOMB wordmark in the logo — used for headings.
+const cinzelDeco = Cinzel_Decorative({
+  variable: "--font-cinzel-deco",
+  subsets: ["latin"],
+  weight: ["700"],
   display: "swap",
 });
 
@@ -90,7 +97,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   );
 
   return (
-    <html lang="en" className={`${cinzel.variable} ${body.variable} h-full antialiased`}>
+    <html lang="en" className={`${cinzel.variable} ${cinzelDeco.variable} ${body.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <script
           type="application/ld+json"

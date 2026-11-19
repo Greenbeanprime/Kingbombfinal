@@ -15,7 +15,7 @@ export default function OrderPage() {
   if (!orderingOn()) notFound();
   return (
     <div className="mx-auto w-full max-w-xl px-4 py-10">
-      <h1 className="text-center text-[clamp(2rem,9vw,3.25rem)] font-black">
+      <h1 className="text-center text-[clamp(2rem,9vw,3.25rem)]">
         <span className="text-gold-foil">Checkout</span>
       </h1>
       <Ornament className="mb-8 mt-4" />

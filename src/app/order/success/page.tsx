@@ -17,7 +17,7 @@ export default function SuccessPage() {
     <div className="mx-auto w-full max-w-xl px-4 py-14 text-center">
       <ClearCart />
       <div className="badge-frame px-6 py-12">
-        <h1 className="text-[clamp(2rem,9vw,3rem)] font-black">
+        <h1 className="text-[clamp(2rem,9vw,3rem)]">
           <span className="text-gold-foil">Order In!</span>
         </h1>
         <Ornament className="my-5" />

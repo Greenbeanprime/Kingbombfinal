@@ -22,7 +22,7 @@ export function Header() {
             loading="eager"
             className="size-12 md:size-14"
           />
-          <span className="font-display text-xl font-bold tracking-[0.18em] text-cream md:text-2xl">
+          <span className="font-deco text-xl font-bold tracking-[0.06em] text-cream md:text-2xl">
             KINGBOMB
           </span>
         </Link>

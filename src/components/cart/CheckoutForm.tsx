@@ -71,7 +71,7 @@ export function CheckoutForm({ deliveryFee }: { deliveryFee: number }) {
   return (
     <form onSubmit={onSubmit} noValidate className="flex flex-col gap-8">
       <section aria-labelledby="cart-h">
-        <h2 id="cart-h" className="mb-3 text-xl font-bold text-gold-hi">
+        <h2 id="cart-h" className="mb-3 text-xl text-gold-hi">
           Your Order
         </h2>
         <ul className="divide-y divide-gold/25 rounded-xl border border-gold/40 bg-ink/60">
