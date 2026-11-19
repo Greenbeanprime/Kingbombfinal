@@ -5,10 +5,10 @@ import { Ornament, Waves } from "@/components/Ornament";
 import { SITE, pageMeta } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
-  title: "KINGBOMB | Late Night Food in Florida: Seafood Platters, Tacos & Pho",
+  title: "KINGBOMB | Late Night Food in Clearwater Beach, FL: Seafood Platters, Tacos & Pho",
   absoluteTitle: true,
   description:
-    "Late night food in Florida done big. KINGBOMB serves Coastal Party Platters piled with seafood, street tacos, and steaming pho. Join the list for launch news.",
+    "Late night food in Clearwater Beach, Florida. KINGBOMB serves Coastal Party Platters piled with seafood, street tacos, and steaming pho. Join the list for launch news.",
   path: "/",
 });
 
@@ -32,14 +32,10 @@ export default function Home() {
           className="mx-auto h-auto w-[min(88vw,30rem)] drop-shadow-[0_20px_45px_rgb(0_0_0/0.7)]"
         />
 
-        <h1 className="mx-auto mt-8 max-w-3xl text-[clamp(1.75rem,7.2vw,3.5rem)] text-cream">
-          Late-Night <span className="text-gold-foil">Seafood, Tacos</span> &amp;{" "}
-          <span className="text-gold-foil">Pho</span>
+        <h1 className="mx-auto mt-8 max-w-3xl text-[clamp(1.6rem,7vw,3.25rem)]">
+          <span className="text-gold-foil">Clearwater Beach, Florida</span>
         </h1>
         <Ornament className="mt-5" />
-        <p className="mx-auto mt-5 max-w-[34ch] text-lg leading-relaxed text-cream/90 md:text-xl">
-          Coastal Party Platters piled high, tacos that hit, and pho that heals. Served ultra late, Florida.
-        </p>
       </section>
 
       <section aria-labelledby="signup-h" className="px-4">

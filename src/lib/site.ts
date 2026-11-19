@@ -5,7 +5,7 @@ export const SITE = {
   url: "https://kingbomb.food",
   tagline: "Ultra Late Night Delivery",
   description:
-    "KINGBOMB is a late night food spot in Florida serving Coastal Party Platters, seafood platters, tacos, and pho, plus catering for your crew.",
+    "KINGBOMB is a late night food spot in Clearwater Beach, Florida serving Coastal Party Platters, seafood platters, tacos, and pho, plus catering for your crew.",
   logo: "/kingbomb-logo.png",
   logoAlt:
     "KINGBOMB logo: a round green and gold badge with a red bomb, palm trees, a pho bowl, a taco, and ocean waves, reading Ultra Late Night Delivery and Coastal Party Platters",

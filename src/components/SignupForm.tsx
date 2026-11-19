@@ -86,13 +86,9 @@ export function SignupForm({ compact = false }: { compact?: boolean }) {
         id={`${id}-status`}
         role="status"
         aria-live="polite"
-        className={`mt-3 min-h-6 text-base ${
-          status.kind === "success" ? "text-gold-hi" : status.kind === "error" ? "text-[#ff9aa9]" : "text-cream/70"
-        }`}
+        className={`mt-3 text-base empty:mt-0 ${status.kind === "success" ? "text-gold-hi" : "text-[#ff9aa9]"}`}
       >
-        {status.kind === "success" || status.kind === "error"
-          ? status.message
-          : "No spam. Just menu drops, launch news, and late-night deals."}
+        {status.kind === "success" || status.kind === "error" ? status.message : ""}
       </p>
     </form>
   );
