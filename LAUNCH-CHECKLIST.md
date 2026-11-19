@@ -34,8 +34,8 @@ Your `.env.local` (secret keys) is ignored by Git and will **not** be uploaded.
 |---|---|
 | `NEXT_PUBLIC_SITE_URL` | `https://kingbomb.food` |
 | `MAILCHIMP_API_KEY` | Mailchimp → profile icon → **Profile → Extras → API keys → Create A Key** |
-| `MAILCHIMP_LIST_ID` | Mailchimp → **Audience → Settings → Audience name and defaults** → "Audience ID" |
-| `MAILCHIMP_SERVER_PREFIX` | The end of your API key after the dash, e.g. `us21` |
+| `MAILCHIMP_LIST_ID` | `cdcadb44fa` (your audience ID, from your embed code) |
+| `MAILCHIMP_SERVER_PREFIX` | `us15` (the end of your API key after the dash) |
 | `STRIPE_SECRET_KEY` | Stripe → **Developers → API keys** → Secret key (`sk_test_…` first, `sk_live_…` at launch) |
 | `STRIPE_PUBLISHABLE_KEY` | Same page → Publishable key (`pk_test_…` first, your `pk_live_…` at launch) |
 | `STRIPE_WEBHOOK_SECRET` | From step 5 (`whsec_…`) |
