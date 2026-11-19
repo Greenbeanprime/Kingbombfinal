@@ -23,10 +23,10 @@ export default function Home() {
         <Image
           src={SITE.logo}
           alt={SITE.logoAlt}
-          width={1600}
-          height={1600}
+          width={2048}
+          height={2048}
           sizes="(max-width: 640px) 88vw, (max-width: 1024px) 26rem, 30rem"
-          quality={85}
+          quality={92}
           loading="eager"
           fetchPriority="high"
           className="mx-auto h-auto w-[min(88vw,30rem)] drop-shadow-[0_20px_45px_rgb(0_0_0/0.7)]"
@@ -44,7 +44,7 @@ export default function Home() {
             Be First in Line
           </h2>
           <p className="mx-auto mb-6 mt-3 max-w-[36ch] text-cream/90">
-            Get the menu drop, opening night news, and late-night deals before anyone else.
+            Get opening night news and late-night deals before anyone else.
           </p>
           <SignupForm />
         </div>

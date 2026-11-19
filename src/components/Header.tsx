@@ -18,7 +18,7 @@ export function Header() {
             width={56}
             height={56}
             sizes="56px"
-            quality={85}
+            quality={92}
             loading="eager"
             className="size-12 md:size-14"
           />

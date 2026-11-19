@@ -16,6 +16,7 @@ export function Footer() {
             width={128}
             height={128}
             sizes="128px"
+            quality={92}
             className="size-28 md:size-32"
           />
         </Link>
