@@ -1,4 +1,4 @@
-import { siDoordash, siFacebook, siGrubhub, siInstagram, siTiktok, siUbereats, siX } from "simple-icons";
+import { siDoordash, siFacebook, siGrubhub, siInstagram, siLinkedin, siTiktok, siUbereats, siX } from "simple-icons";
 import { SOCIALS, type SocialId } from "@/data/socials";
 
 const ICONS: Record<SocialId, { path: string; bg: string }> = {
@@ -6,6 +6,7 @@ const ICONS: Record<SocialId, { path: string; bg: string }> = {
   instagram: { path: siInstagram.path, bg: "#E1306C" },
   tiktok: { path: siTiktok.path, bg: "#000000" },
   x: { path: siX.path, bg: "#000000" },
+  linkedin: { path: siLinkedin.path, bg: "#0A66C2" },
   grubhub: { path: siGrubhub.path, bg: "#F63440" },
   ubereats: { path: siUbereats.path, bg: "#06C167" },
   doordash: { path: siDoordash.path, bg: "#FF3008" },
