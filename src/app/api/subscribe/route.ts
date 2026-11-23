@@ -14,7 +14,7 @@ export async function POST(req: Request) {
 
   // Honeypot: bots fill every field. Pretend it worked so they move on.
   if (typeof body.website === "string" && body.website.trim() !== "") {
-    return json(200, "Almost there! Check your inbox to confirm your subscription.");
+    return json(200, "You’re on the list! See you late night.");
   }
 
   const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
@@ -32,22 +32,23 @@ export async function POST(req: Request) {
   const url = `https://${dc}.api.mailchimp.com/3.0/lists/${encodeURIComponent(list)}/members/${hash}`;
 
   try {
-    // PUT = add-or-update. New people get "pending", which makes Mailchimp send
-    // the double opt-in confirmation email. Existing members keep their status.
+    // PUT = add-or-update. Single opt-in: new people are subscribed immediately
+    // (no confirmation email). Existing members keep their status, so anyone who
+    // unsubscribed is never re-added without their consent.
     const res = await fetch(url, {
       method: "PUT",
       headers: {
         Authorization: `Basic ${Buffer.from(`kingbomb:${key}`).toString("base64")}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email_address: email, status_if_new: "pending" }),
+      body: JSON.stringify({ email_address: email, status_if_new: "subscribed" }),
       cache: "no-store",
     });
     const data = (await res.json().catch(() => ({}))) as { status?: string; title?: string; detail?: string };
 
     if (res.ok) {
-      if (data.status === "subscribed") return json(200, "You’re already on the list. See you late night!");
-      return json(200, "Almost there! Check your inbox and tap the link to confirm.");
+      if (data.status === "pending") return json(200, "Almost there! Check your inbox for the link we sent earlier.");
+      return json(200, "You’re on the list! See you late night.");
     }
 
     console.error("[subscribe] Mailchimp error", res.status, data.title, data.detail);
