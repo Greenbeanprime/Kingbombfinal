@@ -6,6 +6,7 @@ import { TabBar } from "@/components/NavLinks";
 import { CartProvider } from "@/components/cart/CartProvider";
 import { CartBar } from "@/components/cart/CartBar";
 import { orderingOn } from "@/data/menu";
+import { SOCIALS } from "@/data/socials";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -74,6 +75,7 @@ const jsonLd = {
   description: SITE.description,
   servesCuisine: SITE.cuisines,
   slogan: SITE.tagline,
+  sameAs: SOCIALS.map((s) => s.url).filter(Boolean),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
