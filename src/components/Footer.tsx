@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { NAV, SITE } from "@/lib/site";
 import { SignupForm } from "./SignupForm";
+import { SocialIcons } from "./SocialIcons";
 import { Waves } from "./Ornament";
 
 export function Footer() {
@@ -42,6 +43,9 @@ export function Footer() {
           </h2>
           <SignupForm compact />
         </section>
+      </div>
+      <div className="mx-auto max-w-6xl px-4 pb-8">
+        <SocialIcons />
       </div>
       <p className="px-4 pb-[calc(var(--tabbar-h)+env(safe-area-inset-bottom)+1.5rem)] text-center text-sm text-cream/60 md:pb-8">
         © {SITE.name} · kingbomb.food · Seafood platters, tacos &amp; pho, late night in Florida
